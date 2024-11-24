@@ -1,0 +1,87 @@
+/* التفاف العنصر */
+.contactWrapper {
+  position: fixed;
+  z-index: 99;
+  right: 30px;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* الزر الأساسي */
+.contact {
+  background-color: black;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  z-index: 99;
+}
+
+.open .contact {
+  transform: scale(1.1) translateY(-10px);
+}
+
+/* العناصر الإضافية */
+.contactElements {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    visibility 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+.open .contactElements {
+  opacity: 1;
+  visibility: visible;
+}
+
+.whatsapp,
+.phone {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #00e676;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+.phone {
+  z-index: 98;
+  padding-top: 2px;
+  padding-right: 2px;
+}
+
+.whatsapp {
+  z-index: 97;
+}
+
+
+.whatsapp {
+  transform: translateY(0); 
+}
+
+.phone {
+  transform: translateY(0); 
+}
+
+.open .whatsapp {
+  transform: translateY(-65px); 
+}
+
+.open .phone {
+  transform: translateY(-117px);
+}
