@@ -2,11 +2,18 @@
   position: relative;
   direction: rtl;
   background-color: var(--Gray-Nurse);
-  height: 100vh;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+@media screen and (max-width: 1000px) {
+  /* Styles for screens wider than 768px */
+  .first_section {
+    height: 300px;
+  }
 }
 
 .first_paragraph {
@@ -17,68 +24,27 @@
   font-weight: 300;
   background-color: var(--Log-Cabin);
   padding: 20px;
-  width: 80%;
+  width: 800px;
   border-radius: 10px;
-  top: calc(-10%);
+  top: calc(-30%);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
-
-.second_paragraph {
-  margin-top: 150px;
-  padding: 20px;
-  width: 80%;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 20px;
-  flex-direction: column;
-}
-
-.first_paragraph, .second_paragraph {
-    opacity: 0;
-    transform: translateY(20px); 
-    transition: opacity  0.5s cubic-bezier(0.77, 0.2, 0.05, 1), transform  0.5s cubic-bezier(0.77, 0.2, 0.05, 1); /* Add transition for smooth effect */
+@media screen and (max-width: 1000px) {
+  /* Styles for screens wider than 768px */
+  .first_paragraph {
+    width: 80%;
   }
-  
-  .first_paragraph.visible, .second_paragraph.visible {
-    opacity: 1;
-    transform: translateY(0); 
-  }
-
-
-.second_paragraph > p {
-  font-size: 16px;
-  line-height: 30px;
-  font-weight: 300;
 }
 
-/* .thered_section {
-    direction: rtl;
-    background-color: var(--Log-Cabin);
-    color: #fff;
-    padding: 50px;
-    font-size: 24px;
-    font-weight: 300;
-    line-height: 50px;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  } */
-
-/* .thered_section > p {
-    background-color: var( --Gray-Nurse);
-    border-radius: 15px;
-    height: 100%;
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  } */
+.first_paragraph.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,36 @@
+.second_section {
+    background-color: var(--Gray-Nurse);
+    padding: 0 50px;
+    padding-bottom: 50px;
+}
+
+.second_paragraph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  width: 800px;
+  margin: auto;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+@media screen and (max-width: 1000px) {
+    /* Styles for screens wider than 768px */
+    .second_paragraph {
+      width: 80%;
+    }
+  }
+
+.second_paragraph > p {
+    direction: rtl;
+}
+
+.second_paragraph.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

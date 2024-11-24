@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import Contact from "./Components/Contact";
 
 import FirstSection from "./Components/FirstSection";
+import SecondSection from "./Components/SecondSection";
 
 export default function Home() {
   return (
@@ -27,7 +28,7 @@ export default function Home() {
         </Link>
       </main>
       <FirstSection/>
-      
+      <SecondSection/>
       {/* <section className={styles.thered_section}>
         <p>
           أن نكون رواذا في مجال التسويق والإنتاج الإبداعي على مستوى المملكة
