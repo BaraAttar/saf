@@ -5,6 +5,7 @@ import Contact from "./Components/Contact";
 
 import FirstSection from "./Components/FirstSection";
 import SecondSection from "./Components/SecondSection";
+import OurServices from "./Components/OurServices";
 
 export default function Home() {
   return (
@@ -29,15 +30,7 @@ export default function Home() {
       </main>
       <FirstSection/>
       <SecondSection/>
-      {/* <section className={styles.thered_section}>
-        <p>
-          أن نكون رواذا في مجال التسويق والإنتاج الإبداعي على مستوى المملكة
-          العربية السعودية والمنطقة، مستلهمين رؤية المملكة 2030 في دعم التحول
-          الرقمي، وتعزيز الإبداع، وبناء علامات تجارية ذات تاثير مستدام. نهدف إلى
-          زراعة الأفكار الملهمة وحصاد نتائج استثائية تساهم في تحقيق تطلعات
-          عملانا وتعزيز مكانتهم في السوق المحلي والعالمي.
-        </p>
-      </section> */}
+      <OurServices/>
     </div>
   );
 }

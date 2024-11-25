@@ -5,11 +5,12 @@
   z-index: 100;
   width: 100%;
   padding: 0 50px;
-  height: 70px;
+  height: 55px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #85997760;
+  /* background-color: var(--Battleship-Gray); */
   border: solid 1px var(--gray-border);
   box-shadow: var(--box-shadow);
   backdrop-filter: blur(35px);
@@ -22,11 +23,16 @@
     }
 }
 
+.logo {
+  color: #fff;
+  padding-top: 5px;
+}
+
 .span {
     display: block;
     position: relative;
     width: 30px;
-    height: 30px;
+    height: 25px;
     z-index: 99;
     cursor: pointer;
 }
@@ -113,3 +119,4 @@
 .isOpen {
   transform: none;
 }
+

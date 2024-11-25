@@ -19,8 +19,8 @@
 .first_paragraph {
   position: absolute;
   color: #fff;
-  font-size: 16px;
-  line-height: 30px;
+  font-size: 24px;
+  line-height: 40px;
   font-weight: 300;
   background-color: var(--Log-Cabin);
   padding: 20px;
@@ -41,6 +41,7 @@
   /* Styles for screens wider than 768px */
   .first_paragraph {
     width: 80%;
+    font-size: 16px ;
   }
 }
 

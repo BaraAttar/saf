@@ -44,7 +44,7 @@ export default function NavBar() {
           })}
         </ul>
       </div>
-      <div>Logo</div>
+      <h1 className={styles.logo}>سعف</h1>
     </nav>
   );
 }

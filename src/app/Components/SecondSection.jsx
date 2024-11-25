@@ -7,14 +7,14 @@ import targeting from "@/assets/targeting.png";
 
 export default function SecondSection() {
   const [isSecondVisible, setIsSecondVisible] = useState(false);
-  const secondParagraphRef = useRef(null); // Use ref instead of querySelector
+  const secondParagraphRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Directly observe the second paragraph using ref
-        if (entry.target === secondParagraphRef.current) {
-          setIsSecondVisible(entry.isIntersecting);
+        // التأكد من تشغيل الأنيميشن مرة واحدة فقط
+        if (entry.isIntersecting && !isSecondVisible) {
+          setIsSecondVisible(true);
         }
       },
       {
@@ -33,12 +33,12 @@ export default function SecondSection() {
         observer.unobserve(secondParagraphElement);
       }
     };
-  }, []);
+  }, [isSecondVisible]); // إضافة `isSecondVisible` إلى الاعتماديات
 
   return (
     <div className={styles.second_section}>
       <div
-        ref={secondParagraphRef} // Attach the ref here
+        ref={secondParagraphRef}
         className={`${styles.second_paragraph} ${
           isSecondVisible ? styles.visible : ""
         }`}
