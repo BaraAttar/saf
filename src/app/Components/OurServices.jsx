@@ -1,54 +1,28 @@
-import Image from "next/image";
+"use client";
 import styles from "./styles/OurServices.module.css";
+import CardSlider from "./CardSlider";
+import { useRef } from "react";
 
-// icon
+import arrowLeft from "@/assets/arrow-left.svg";
+import arrowRight from "@/assets/arrow-right.svg";
+import Image from "next/image";
 
-import digital_marketing from "@/assets/digital-marketing.png";
-import Link from "next/link";
-
-const list = [
-  {
-    key: 1,
-    service: "خدمات التسويق الرقمي",
-    list: [
-      { title: "إدارة الحملات الإعلانية", describe: "" },
-      { title: "تعزيز الحضور الرقمي", describe: "" },
-      { title: "تحليل الأداء", describe: "" },
-    ],
-  },
-  {
-    key: 2,
-    service: "إدارة حسابات التواصل الاجتماعي",
-    list: [
-      { title: "إستراتيجيات مدروسة", describe: "" },
-      { title: "محتوى إبداعي", describe: "" },
-      { title: "متابعة الأداء", describe: "" },
-    ],
-  },
-  {
-    key: 3,
-    service: "الاستشارات التسويقية",
-    list: [
-      { title: "تحليل السوق والمنافسين", describe: "" },
-      { title: "إدارة الميزانيات", describe: "" },
-      { title: "استراتيجيات التواصل", describe: "" },
-      { title: "توجيه الهوية التجارية", describe: "" },
-    ],
-  },
-  {
-    key: 4,
-    service: "الخدمات الإنتاجية",
-    list: [
-      { title: "كتابة المحتوى", describe: "" },
-      { title: "إنتاج الفيديو", describe: "" },
-      { title: "التصوير الفوتوغرافي", describe: "" },
-      { title: "التغطيات الإعلامية", describe: "" },
-      { title: "الخدمات الإنتاجية الإبداعية", describe: "" },
-    ],
-  },
-];
 
 export default function OurServices() {
+  const sliderRef = useRef(null);
+
+  const slideLeft = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollLeft -= sliderRef.current.offsetWidth; // التمرير لليسار
+    }
+  };
+
+  const slideRight = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollLeft += sliderRef.current.offsetWidth; // التمرير لليمين
+    }
+  };
+
   return (
     <div className={styles.ourServices}>
       <h1>خدماتنا</h1>
@@ -58,27 +32,11 @@ export default function OurServices() {
       </p>
 
       <div className={styles.serviceCardsList}>
-        {/* card start */}
-        {list.map((service)=>(
-             <div key={service.key} className={styles.serviceCard}>
-             <Image
-               className={styles.icon}
-               alt="icon"
-               src={digital_marketing}
-               width={100}
-               height={100}
-             />
-             <p className={styles.title}>{service.service}</p>
-             <ul>
-                {service.list.map((i)=>(
-                    <li key={i.title}>{i.title}</li>
-                ))}
-             </ul>
-           </div>
-        ))}
-        
+      <Image src={arrowLeft} width={30} height={30} alt="icon" onClick={slideLeft} className={styles.navButton}/>
+        <CardSlider sliderRef={sliderRef} />
+        <Image src={arrowRight} width={30} height={30} alt="icon" onClick={slideRight} className={styles.navButton}/>
+
       </div>
-        <Link href={"/"} className={styles.button}>للمزيد من التفاصيل</Link>
     </div>
   );
 }

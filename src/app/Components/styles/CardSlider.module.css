@@ -1,0 +1,127 @@
+.sliderContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  color: black;
+}
+
+.slider {
+  width: 100%;
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  gap: 20px;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+
+/* إخفاء شريط التمرير لـ WebKit */
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  width: 100%;
+  height: fit-content;
+  max-height: 420px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: none;
+  scroll-snap-align: start;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+.card > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon {
+  /* filter: invert(1); */
+  margin-bottom: 20px;
+}
+.title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.description {
+  line-height: 40px;
+  max-height: 200px;
+  overflow: scroll;
+}
+
+@media screen and (max-width: 800px) {
+  .serviceCardsList {
+    flex-direction: column;
+  }
+  .serviceCard {
+    height: 430px;
+  }
+  .description {
+    line-height: 20px;
+  }
+}
+
+.request_service {
+  margin: 0 auto;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Log-Cabin);
+  width: 200px;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 10px;
+  transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+.request_service > p {
+  padding: 10px;
+  padding-top: 15px;
+}
+
+.request_service > img {
+  filter: invert(1);
+  transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+@media screen and (max-width: 800px) {
+  .request_service {
+    /* margin: auto; */
+    margin-top: 10px;
+    padding: 10px;
+    width: fit-content;
+  }
+  .request_service > p {
+    padding: 5px;
+    padding-top: 8px;
+  }
+  .request_service > img {
+    width: 20px;
+    height: 20px;
+  }
+  .request_service:active > img {
+    transform: translateX(-10px);
+  }
+
+}
+
+@media screen and (min-width: 800px) {
+  .request_service:hover {
+    transform: translateX(-5px);
+  }
+
+  .request_service:hover > img {
+    transform: translateX(-10px);
+  }
+}

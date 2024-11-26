@@ -4,10 +4,6 @@
     padding-bottom: 50px;
 }
 
-.second_paragraph > p {
-  font-size: 24px;
-}
-
 .second_paragraph {
   display: flex;
   align-items: center;
@@ -26,13 +22,9 @@
   padding-top: 100px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 800px) {
     .second_paragraph {
       width: 90%;
-      font-size: 16px;
-    }
-    .second_paragraph > p {
-      font-size: 16px;
     }
   }
 
